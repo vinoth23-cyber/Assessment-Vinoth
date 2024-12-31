@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scrolling Animation</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+
+    .marquee-container {
+      background-color: #0043F1;
+      overflow: hidden;
+      white-space: nowrap;
+      position: relative;
+      height: 100px;
+    }
+
+    .marquee-content {
+      display: inline-block;
+      animation: marquee 40s linear infinite;
+      color: white;
+      font-size: 56px;
+      font-family: Arial, sans-serif;
+    }
+
+    .marquee-content span {
+      margin: 0 20px;
+    }
+
+    .marquee-content .star {
+      color: gold;
+      font-size: 3.5rem;
+    }
+
+    /* Animation keyframes */
+    @keyframes marquee {
+      from {
+        transform: translateX(10%); /* Start off-screen from the right */
+      }
+      to {
+        transform: translateX(-100%); /* Move off-screen to the left */
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="marquee-container">
+    <div class="marquee-content">
+        <span class="star">✦</span>
+        <span>Get in touch</span>
+        <span class="star">✦</span>
+        <span>Get in touch</span>
+        <span class="star">✦</span>
+        <span>Get in touch</span>
+        <span class="star">✦</span>
+        <span>Get in touch</span>
+        <span class="star">✦</span>
+        <span>Get in touch</span>
+        <span class="star">✦</span>
+        <span>Get in touch</span>
+        <span class="star">✦</span>
+        <span>Get in touch</span>
+        <span class="star">✦</span>
+        <span>Get in touch</span>
+        <span>Get in touch</span>
+        <span class="star">✦</span>
+        <span>Get in touch</span>
+        <span class="star">✦</span>
+        <span>Get in touch</span>
+        <span class="star">✦</span>
+        <span>Get in touch</span>
+    </div>
+  </div>
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

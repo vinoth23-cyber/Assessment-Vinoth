@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About 5</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Set the background image for the page with a unique class */
+        .mach1-main {
+            background-color: #EFF0F2;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Add transparent white overlay */
+        .machinery1-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.5);
+            z-index: 1;
+        }
+
+        /* Content inside the container */
+        .machinery1-content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Left column styling */
+        .machinery1-left-column {
+            flex: 1;
+        }
+
+        .machinery1-left-column h2 {
+            font-size: 2rem;
+            color: #333;
+        }
+
+        .machinery1-left-column p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        /* Right column styling */
+        .machinery1-right-column {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .machinery1-right-column img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            transform: scale(0.8);
+            transition: transform 0.5s ease-in;
+        }
+
+        /* Zoom-in effect when image comes into view */
+        .machinery1-right-column img.machinery1-zoom-in {
+            transform: scale(1);
+        }
+
+        /* Add a unique class for the body when image is in view */
+        .machinery1-body {
+            background-color: #f0f0f0;
+        }
+
+        .line-break {
+            display: inline-block;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .headerFontmachinery1 {
+            font-size: 56px;
+            font-weight: 600;
+        }
+
+        .machinery1text {
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .machinery1TopRotated-image {
+            position: absolute;
+            top: -42%;
+            width: 40%;
+            left: -15%;
+            transform: rotate(58deg);
+            z-index: 1;
+            opacity: 0.5;
+        }
+
+        .machinery1BotRotated-image {
+            position: absolute;
+            bottom: -40%;
+            left: 10%;
+            width: 38%;
+            transform: rotate(80deg);
+            z-index: 1;
+            opacity: 0.5;
+        }
+
+        .sliding-box-mach-img {
+            height: 300px;
+            overflow: hidden;
+            position: relative;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        .sliding-content-mach-img {
+            display: flex;
+            transition: transform 1s ease-in-out;
+        }
+
+        .content-item-mach-img {
+            flex-shrink: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .content-item-mach-img img {
+            width: 100%;
+            height: 700px;
+            object-fit: cover;
+        }
+
+        .mach-img {
+            height: 500px;
+            width: 100%;
+            max-height: 600px;
+        }
+
+        .headerFontmach {
+            font-size: 72px;
+            font-weight: 600;
+        }
+
+        .mach1Rotated-image {
+            position: absolute;
+            top: -30%;
+            right: -14%;
+            width: 38%;
+            transform: rotate(338deg);
+            z-index: 1;
+            opacity: 0.5;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .machinery1-content {
+                flex-direction: column;
+            }
+
+            .machinery1-right-column img {
+                width: 100%;
+                height: auto;
+            }
+
+            .headerFontmachinery1 {
+                font-size: 36px;
+            }
+
+            .mach-img {
+                height: 300px;
+                max-height: 400px;
+            }
+
+            .machinery1TopRotated-image,
+            .machinery1BotRotated-image {
+                display: none;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .headerFontmachinery1 {
+                font-size: 28px;
+            }
+
+            .machinery1-left-column h2 {
+                font-size: 1.5rem;
+            }
+
+            .machinery1-left-column p {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="py-5 mach1-main ps-5">
+        <img src="/assets/images/about2.png" alt="Background Image" class="mach1Rotated-image">
+
+        <div class="row">
+            <!-- Left Column -->
+            <div class="col-md-6">
+                <div id="carouselExampleIndicators" class="carousel slide" data-bs-interval="2000" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                            class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="../assets/images/mach1.png" class="d-block mach-img" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../assets/images/mach2.png" class="d-block mach-img" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../assets/images/mach3.png" class="d-block mach-img" alt="...">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Right Column -->
+            <div class="col-md-6">
+                <div class="blur-effect-container">
+                    <div class="blur-effect-item py-5">
+                        <span class="blur-word headerFontmachinery1">Discover the</span>
+                        <span class="line-break"></span>
+                        <br />
+                        <span class="blur-word headerFontmachinery1">advanced</span>
+                        <span class="line-break"></span>
+                        <br />
+                        <span class="blur-word headerFontmachinery1">equipment driving</span>
+                        <span class="line-break"></span>
+                        <br />
+                        <span class="blur-word headerFontmachinery1 primary-color">our precision</span>
+                        <span class="line-break"></span>
+                        <br />
+                        <span class="blur-word headerFontmachinery1 primary-color">manufacturing.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="mach-running"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/blureffect.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#mach-running").load("mach-running.html");
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Accordion with Icons</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .accordion-button::after {
+            display: none;
+        }
+
+        /* .accordion-button {
+            position: relative;
+            background-color: red;
+        } */
+
+        /* General icon styles */
+        .accordion-button .float-icon {
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: all 0.3s ease;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* background-color: red; */
+            /* Default background color */
+            color: #0043F1;
+            opacity: 1;
+        }
+
+        /* Plus icon visible initially */
+        .accordion-button .float-icon.plus {
+            opacity: 1;
+        }
+
+        /* Minus icon hidden initially */
+        .accordion-button .float-icon.minus {
+            opacity: 0;
+        }
+
+        /* When expanded, show minus icon and hide plus icon */
+        .accordion-button:not(.collapsed) .float-icon.plus {
+            opacity: 0;
+        }
+
+        .accordion-button:not(.collapsed) .float-icon.minus {
+            opacity: 1;
+        }
+
+        /* Active background and text color for icons */
+        .accordion-button .float-icon {
+            background-color: #0043F1;
+            /* Active blue background */
+            color: white;
+            /* Active text color */
+        }
+
+        /* Accordion container background */
+        .accordion-item {
+            border: none;
+            background-color: #E6E6E3;
+            margin-bottom: 8px;
+            border-radius: 8px;
+            border: 1px solid grey;
+
+        }
+
+        /* Accordion header styling */
+        .accordion-button {
+            /* border-radius: 8px; */
+            box-shadow: none;
+            background-color: #E6E6E3;
+            height: 70px;
+            /* border-bottom: 1px solid grey; */
+
+        }
+
+        .accordborder {
+            background: linear-gradient(90deg, var(--token-965e5c17-6359-41cc-bd03-2fa4898e2c2b, rgb(34, 36, 38))
+                /* {"name":"6"} */
+                0%, rgba(34, 36, 38, 0) 100%);
+            opacity: 1;
+            transform: none;
+            transform-origin: 50% 50% 0px;
+            height: 1px;
+            will-change: transform;
+            margin-left: 20px;
+
+        }
+
+        /* Custom font styles for questions */
+        .accordion-button span {
+            font-weight: bold;
+        }
+
+        .main-container {
+            background-color: #EFF0F2;
+        }
+    </style>
+</head>
+
+<body>
+    <div class=" main-container">
+        <div class="blur-effect-container">
+
+            <div class="blur-effect-item justify-content-center py-5">
+                <span class="blur-word headerFontLg">Frequently <br /></span>
+                <span class="blur-word headerFontLg">Asked </span>
+                <span class="blur-word headerFontLg">Questions </span>
+                <div class="line-break justify-content-center text-center">
+                    <span class="blur-word headerFontLg">by</span>
+
+                    <span class="blur-word headerFontLg" style="color: #0043F1;">our</span>
+                    <span class="blur-word headerFontLg" style="color: #0043F1;">clients</span>
+                </div>
+                </span>
+            </div>
+
+        </div>
+        <div class="accordion container py-5" id="customAccordion">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed d-flex align-items-center" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                        <span class="flex-grow-1">What does Prax Engineering specialize in?</span>
+                        <span class="float-icon plus"><i class="fas fa-plus"></i></span>
+                        <span class="float-icon minus"><i class="fas fa-minus"></i></span>
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#customAccordion">
+                    <div class="accordborder"></div>
+                    <div class="accordion-body">
+                        We specialize in precision engineering, including high-accuracy machining and custom component
+                        manufacturing.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed d-flex align-items-center" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                        <span class="flex-grow-1">Which industries does Prax Engineering serve?</span>
+                        <span class="float-icon plus"><i class="fas fa-plus"></i></span>
+                        <span class="float-icon minus"><i class="fas fa-minus"></i></span>
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#customAccordion">
+                    <div class="accordborder"></div>
+
+                    <div class="accordion-body">
+                        We serve industries such as aerospace, automotive, healthcare, and energy sectors.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed d-flex align-items-center" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                        <span class="flex-grow-1">Do you manufacture custom parts?</span>
+                        <span class="float-icon plus"><i class="fas fa-plus"></i></span>
+                        <span class="float-icon minus"><i class="fas fa-minus"></i></span>
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#customAccordion">
+                    <div class="accordborder"></div>
+
+                    <div class="accordion-body">
+                        Yes, we manufacture custom parts tailored to our clients' specifications.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed d-flex align-items-center" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#collapseFour">
+                        <span class="flex-grow-1">How can I contact Prax Engineering?</span>
+                        <span class="float-icon plus"><i class="fas fa-plus"></i></span>
+                        <span class="float-icon minus"><i class="fas fa-minus"></i></span>
+                    </button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#customAccordion">
+                    <div class="accordborder"></div>
+
+                    <div class="accordion-body">
+                        You can contact us via our website, email, or phone. Visit the "Contact Us" section for more
+                        details.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed d-flex align-items-center" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#collapseFive">
+                        <span class="flex-grow-1">Where is Prax Engineering located?</span>
+                        <span class="float-icon plus"><i class="fas fa-plus"></i></span>
+                        <span class="float-icon minus"><i class="fas fa-minus"></i></span>
+                    </button>
+                </h2>
+                <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#customAccordion">
+                    <div class="accordborder"></div>
+
+                    <div class="accordion-body">
+                        Prax Engineering is located at [Insert Location Here]. For directions, visit our "Location"
+                        page.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

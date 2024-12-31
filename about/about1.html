@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About 1</title>
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Set the background image for the page with a unique class */
+        .about1-main {
+            margin: 0;
+            padding: 0;
+            background-image: url('../assets/images/about1.png');
+            background-size: cover;
+            background-position: center;
+            /* background-attachment: fixed; */
+        }
+
+        /* Add transparent white overlay */
+        .about1-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            /* height: 100%; */
+            background-color: rgba(255, 255, 255, 2.5);
+            /* White color with 50% transparency */
+            z-index: 1;
+        }
+
+        /* Content inside the container */
+        .about1-content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            /* Slight transparency for content background */
+        }
+
+        /* Left column styling */
+        .about1-left-column {
+            flex: 1;
+            /* padding-left: 50px; */
+        }
+
+        .about1-left-column h2 {
+            font-size: 2rem;
+            color: #333;
+        }
+
+        .about1-left-column p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        /* Right column styling */
+        .about1-right-column {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .about1-right-column img {
+            width: 800px;
+            height: 450px;
+            /* Set a fixed height */
+            object-fit: cover;
+            transform: scale(0.8);
+            /* Initial zoom-in effect */
+            transition: transform 0.5s ease-in;
+            /* Smooth zoom-in */
+        }
+
+        /* For screens smaller than 768px */
+@media (max-width: 768px) {
+    .about1-right-column img {
+        max-width: 100%; /* Take full width on smaller screens */
+    }
+}
+
+/* For screens smaller than 576px */
+@media (max-width: 576px) {
+    .about1-right-column img {
+        max-width: 100%; /* Full width on extra small screens */
+    }
+}
+
+        /* Zoom-in effect when image comes into view */
+        .about1-right-column img.about1-zoom-in {
+            transform: scale(1);
+            /* Zoom-in to original size */
+        }
+
+        /* Add a unique class for the body when image is in view */
+        .about1-body {
+            background-color: #f0f0f0;
+            /* Example of background change */
+        }
+        .line-break {
+            display: inline-block;
+            /* Ensures this will break only after the previous word */
+            width: 100%;
+            /* Forces the break after this span */
+            margin-top: 10px;
+            /* Optional, to add space between lines */
+        }
+        .headerFontabout1{
+            font-size: 96px;
+            color: #0043F1;
+            font-weight: 700;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="about1-main">
+        <div class="about1-overlay"></div>
+
+        <div class="about1-content">
+            <!-- Content row with Bootstrap grid -->
+            <div class="row">
+                <!-- Left Column -->
+                <div class="col-12 col-sm-12 col-md-5 about1-left-column d-flex  justify-content-center align-items-center">
+                    <div class="blur-effect-container ps-5">
+                        <div class="blur-effect-item justify-content-start">
+                            <span class="blur-word headerFontabout1">Certified.</span>
+                            <span class="line-break">
+                            </span>
+                            <span class="blur-word headerFontabout1">Seasoned.</span>
+                            <span class="line-break"></span>
+                            <span class="blur-word headerFontabout1">Innovative.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column with image -->
+                <div class="col-12 col-sm-12 col-md-7 about1-right-column">
+                    <img id="about1-zoomImage" src="../assets/images/about1-img.png" alt="Company Image">
+                    <!-- Ensure correct image path -->
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- Full-screen overlay -->
+
+    <!-- jQuery and Bootstrap Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/blureffect.js"></script>
+
+    <script>
+        // Check if the image is in view
+        function isInView(element) {
+            const rect = element.getBoundingClientRect();
+            return rect.top >= 0 && rect.bottom <= window.innerHeight;
+        }
+
+        $(document).ready(function () {
+            const image = $('#about1-zoomImage');
+
+            // When the page is scrolled, check if the image is in view
+            $(window).on('scroll', function () {
+                if (isInView(image[0])) {
+                    // Add the zoom-in class and change the body class
+                    image.addClass('about1-zoom-in'); // Trigger zoom-in effect
+                    $('body').addClass('about1-body'); // Add a unique class to the body
+                }
+            });
+
+            // Trigger initial check if the image is already in view on page load
+            if (isInView(image[0])) {
+                image.addClass('about1-zoom-in');
+                $('body').addClass('about1-body');
+            }
+        });
+    </script>
+</body>
+
+</html>
