@@ -1,0 +1,138 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: black; /* Set default text color to black */
+  -webkit-font-smoothing: antialiased; /* Improve font rendering in Safari */
+  -moz-osx-font-smoothing: grayscale; /* Improve font rendering in Firefox */
+}
+
+/* Navbar Styles */
+
+/* BlurEffect Css */
+.blur-effect-container {
+overflow: hidden;
+position: relative;
+display: flex;
+justify-content: flex-start; /* Align items to the start (left) */
+align-items: flex-start; /* Align items to the start vertically */
+border-radius: 8px;
+margin-bottom: 30px; /* Space between content boxes */
+height: auto; /* Ensure the container height adjusts based on content */
+}
+
+/* Vendor prefixes for better support */
+.blur-effect-item {
+display: -webkit-flex; /* Safari */
+display: -moz-flex;    /* Firefox */
+display: flex;         /* Standard syntax */
+flex-wrap: wrap; /* Allow items to wrap */
+justify-content: flex-start; /* Keep words aligned to the left */
+align-items: flex-start; /* Align words to the top */
+overflow: hidden;
+width: 100%;
+opacity: 0; /* Initially hidden */
+transition: opacity 1s ease-in-out;
+line-height: 1; 
+}
+
+.blur-word {
+opacity: 0;
+filter: blur(15px);
+transform: translateX(-25px);
+margin: 0 5px;
+transition: all 0.5s ease-in-out;
+}
+
+.blur-word.active {
+opacity: 1;
+filter: blur(0);
+transform: translateX(0);
+}
+
+.blur-effect-item.visible {
+opacity: 1;
+}
+
+/* Class for breaking the line but keeping other words on the same line */
+footer {
+background-color: #141414;
+color: #333333; /* Change footer text color to black */
+text-align: center;
+padding: 20px 30px; /* Increased padding for footer */
+}
+
+/* Global Styles */
+.headerFontXl{
+font-size: 72px;
+font-weight: 700;
+}
+
+.headerFontLg{
+font-size: 56px;
+font-weight: 600;
+}
+
+.headerFontMd{
+font-size: 48px;
+font-weight: 700;
+}
+
+.headerFontSm{
+font-size: 40px;
+font-weight: 600;
+}
+
+.paragraphFontLg{
+font-size: 24px;
+font-weight: 600;  
+}
+
+.paragraphFontMd{
+font-size: 20px;
+font-weight: 600;  
+}
+
+.primary-color {
+color: #0043F1;
+}
+
+/* Vendor Prefixes for older browsers */
+/* @-webkit-keyframes fadeIn {
+0% { opacity: 0; }
+100% { opacity: 1; }
+}
+
+@-moz-keyframes fadeIn {
+0% { opacity: 0; }
+100% { opacity: 1; }
+}
+
+@keyframes fadeIn {
+0% { opacity: 0; }
+100% { opacity: 1; }
+} */
+
+/* Flexbox Fallback for older browsers */
+/* .container { */
+/* display: -webkit-flex; Safari */
+/* display: -moz-flex;    Firefox */
+/* display: flex;         Standard syntax */
+/* -webkit-flex-wrap: wrap; Safari */
+/* -moz-flex-wrap: wrap;    Firefox */
+/* flex-wrap: wrap;        Standard syntax */
+/* } */
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+.headerFontXl, .headerFontLg, .headerFontMd, .headerFontSm {
+  font-size: 10vw; /* Adjust the font size dynamically on smaller screens */
+}
+}
+
+@media (max-width: 480px) {
+footer {
+  padding: 15px; /* Reduce padding for mobile screens */
+}
+}

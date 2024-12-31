@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Prevent horizontal overflow */
+        html, body {
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Image style for responsive scaling */
+        .img-fluid {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Paragraph styles with better line spacing */
+        .content-text {
+            line-height: 26px;
+            font-size: 20px;
+        }
+
+        /* Blue line to separate heading */
+        .blue-line {
+            border-top: 4px solid #0043F1;
+            margin-bottom: 20px;
+            width: 15%;
+        }
+
+        /* Highlight background animation */
+        .highlight-line {
+            position: relative;
+            display: inline-block;
+            color: black;
+            z-index: 1;
+        }
+
+        .highlight-line::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 100%;
+            background-color: #0043F1;
+            z-index: -1;
+            transition: width 1s ease-in-out;
+        }
+
+        .highlight-line.in-view::before {
+            width: 100%;
+        }
+
+        /* Main container background color */
+        .main-container {
+            background-color: #EFF0F2;
+        }
+
+        /* Line break utility */
+        .line-break {
+            display: inline-block;
+            width: 100%;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-container pb-5">
+
+        <div class="row pt-5">
+            <!-- Left Column: Image (Responsive) -->
+            <div class="col-12 col-sm-6 col-md-6 col-lg-6">
+                <img src="assets/images/nut.png" alt="Image Description" class="img-fluid">
+            </div>
+
+            <!-- Right Column: Heading and Paragraph (Responsive) -->
+            <div class="col-12 col-sm-6 col-md-6 col-lg-6">
+                <div class="blue-line"></div>
+
+                <div class="blur-effect-container">
+                    <div class="blur-effect-item">
+                        <!-- Heading Text with animation -->
+                        <span class="blur-word headerFontMd">Precision</span>
+                        <span class="blur-word headerFontMd">Engineering</span>
+                        <span class="line-break">
+                            <span class="blur-word headerFontMd">Solutions</span>
+                            <span class="blur-word headerFontMd">for</span>
+                            <span class="blur-word headerFontMd">a</span>
+                            <span class="blur-word headerFontMd">World</span>
+                            <span class="blur-word headerFontMd">in</span>
+                            <span class="blur-word headerFontMd">Motion</span>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Content Text: Describing the services offered -->
+                <span class="content-text">
+                    Precision is at the heart of everything we do. Our state-of-the-art manufacturing facilities,
+                    equipped with the <span class="highlight-line" id="highlighted-line" style="color: white;">
+                        latest CNC machines, CAD systems, and quality control technologies.</span> allow us to produce parts and
+                    components with unmatched accuracy, quality, and efficiency.<br /><br />
+                    We work with a wide range of materials, from common metals and plastics to exotic alloys and
+                    composites, and can handle projects of any size and complexity.<br /><br />
+                    Moreover, engineering is more than just making things; it's about solving problems and creating
+                    value. That's why we approach every project with a deep understanding of our clients' needs and
+                    goals, working closely with them to design, develop, and implement solutions tailored to their
+                    specific requirements to drive maximum results.
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and jQuery for animation -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/blureffect.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Intersection Observer for the highlight line
+        const highlightedLine = document.getElementById('highlighted-line');
+
+        const paragraphObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    highlightedLine.classList.add('in-view'); // Add animation class
+                } else {
+                    highlightedLine.classList.remove('in-view'); // Remove animation class
+                }
+            });
+        }, { threshold: 0.5 });
+
+        paragraphObserver.observe(highlightedLine);
+
+        // Keyframe animation for words (headline animation)
+        const style = document.createElement('style');
+        style.textContent = `
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    `;
+        document.head.appendChild(style);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrolling Cards Effect</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        #cardContainer {
+            position: relative;
+            height: 400vh; /* 4 times the viewport height for 3 cards */
+        }
+        .card {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%; /* Card width */
+            max-width: 1000px;
+            height: 60vh; /* Card height */
+            background-color: #d1e7dd;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+            opacity: 0; /* Initially invisible */
+        }
+        .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+        .card-title {
+            padding: 20px;
+            font-size: 24px;
+        }
+        .card-text {
+            padding: 20px;
+        }
+        .card.active {
+            opacity: 1;
+            transform: translate(-50%, -50%); /* Smooth transition to center */
+        }
+    </style>
+</head>
+<body>
+
+    <div id="cardContainer">
+        <div class="card" data-index="1">
+            <img src="/assets/images/hoverimg1.png" alt="Card 1">
+            <div class="card-title">Customer-Focused: Tailoring Solutions</div>
+            <div class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget felis eget nunc lobortis mattis.</div>
+        </div>
+        <div class="card" data-index="2">
+            <img src="/assets/images/hoverimg2.png" alt="Card 2">
+            <div class="card-title">Innovative: Continuously Pushing the Boundaries</div>
+            <div class="card-text">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec velit neque.</div>
+        </div>
+        <div class="card" data-index="3">
+            <img src="/assets/images/hoverimg3.png" alt="Card 3">
+            <div class="card-title">Technology-Driven Solutions for Your Needs</div>
+            <div class="card-text">Nulla porttitor accumsan tincidunt. Curabitur aliquet quam id dui posuere blandit. Vivamus suscipit tortor.</div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            const cards = $('.card');
+            const cardContainer = $('#cardContainer');
+
+            // Initialize Intersection Observer to detect when cards enter the viewport
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        $(entry.target).addClass('active'); // Add active class when card enters the viewport
+                    } else {
+                        $(entry.target).removeClass('active'); // Remove active class when card exits the viewport
+                    }
+                });
+            }, {
+                threshold: 0.5, // Trigger when 50% of the card is in the viewport
+            });
+
+            // Observe each card element
+            cards.each(function() {
+                observer.observe(this);
+            });
+        });
+    </script>
+
+</body>
+</html>

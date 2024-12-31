@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Custom styles for the divider */
+        .divider {
+            width: 90%;
+            height: 1px;
+            background-color: #000;
+            margin: 2rem auto;
+        }
+
+        .about2-main {
+            /* margin: 30px; */
+            background-color: #E6E6E3;
+            position: relative;
+            overflow: hidden; /* Ensures the image doesn't overflow outside the container */
+        }
+
+        .about2-text {
+            font-size: 32px;
+            position: relative; /* Ensures the text remains above the image */
+            z-index: 2; /* Positions text above the image */
+        }
+
+        .about2Rotated-image {
+            position: absolute;
+    top: -35%;
+    right: -14%;
+    width: 38%;
+    transform: rotate(338deg);
+    transform: rotate(24d1eg);
+    z-index: 1;
+    opacity: 0.5;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="about2-main">
+        <img src="/assets/images/about2.png" alt="Background Image" class="about2Rotated-image">
+        <div class="about2-content">
+            <div class="row py-5">
+                <div>
+                    <div class="col">
+                        <div class="text-center">
+                            <span class="headerFontSm">Who <span class="primary-color">We Are?</span></span>
+                            <!-- Divider -->
+                            <div class="divider"></div>
+                        </div>
+                    </div>
+
+                    <div class="py-3">
+                        <div class="blur-effect-container">
+                            <div class="blur-effect-item justify-content-center">
+                                <span class="blur-word about2-text">
+                                    At Prax Engineering, we are more than just a manufacturing company—we are your
+                                </span>
+                                <span class="line-break"></span>
+                                <br />
+
+                                <span class="blur-word about2-text">
+                                    trusted partner for precision engineering solutions.
+                                </span>
+                                <span class="line-break"></span>
+                                <br /><br />
+                                <span class="blur-word about2-text">
+                                    Backed by a team of seasoned engineers and technicians, we bring decades of
+                                </span>
+                                <br />
+                                <div class="line-break"></div>
+
+                                <span class="blur-word about2-text">
+                                    expertise and a commitment to innovation, ensuring every project is executed with
+                                </span>
+                                <br />
+                                <div class="line-break"></div>
+                                <span class="blur-word about2-text">
+                                    technical excellence and creativity.
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

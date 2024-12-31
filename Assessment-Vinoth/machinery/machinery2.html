@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About 5</title>
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Set the background image for the page with a unique class */
+        .mach2-main {
+            /* background-color: #E6E6E3; */
+            position: relative;
+            overflow: hidden;
+
+        }
+
+        /* Add transparent white overlay */
+        .mach2-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            /* height: 100%; */
+            background-color: rgba(255, 255, 255, 0.5);
+            /* White color with 50% transparency */
+            z-index: 1;
+        }
+
+        /* Content inside the container */
+        .mach2-content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+            padding: 20px;
+            /* background-color: rgba(255, 255, 255, 0.8); */
+            /* Slight transparency for content background */
+        }
+
+        /* Left column styling */
+        .mach2-left-column {
+            flex: 1;
+            /* padding-left: 50px; */
+        }
+
+        .mach2-left-column h2 {
+            font-size: 2rem;
+            color: #333;
+        }
+
+        .mach2-left-column p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        /* Right column styling */
+        .mach2-right-column {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .mach2-right-column img {
+            width: 800px;
+            height: 450px;
+            /* Set a fixed height */
+            object-fit: cover;
+            transform: scale(0.8);
+            /* Initial zoom-in effect */
+            transition: transform 0.5s ease-in;
+            /* Smooth zoom-in */
+        }
+
+        /* Zoom-in effect when image comes into view */
+        .mach2-right-column img.mach2-zoom-in {
+            transform: scale(1);
+            /* Zoom-in to original size */
+        }
+
+        /* Add a unique class for the body when image is in view */
+        .mach2-body {
+            background-color: #f0f0f0;
+            /* Example of background change */
+        }
+
+        .line-break {
+            display: inline-block;
+            /* Ensures this will break only after the previous word */
+            width: 100%;
+            /* Forces the break after this span */
+            margin-top: 10px;
+            /* Optional, to add space between lines */
+        }
+
+        .headerFontmach2 {
+            font-size: 72px;
+            font-weight: 700;
+        }
+        .headerFontmachs2 {
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .mach2text {
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .mach2TopRotated-image {
+            position: absolute;
+            top: -42%;
+            width: 40%;
+            left: -15%;
+            transform: rotate(58deg);
+            transform: rotate(24d1eg);
+            z-index: 1;
+            opacity: 0.5;
+        }
+
+        .mach2BotRotated-image {
+            position: absolute;
+            bottom: -40%;
+            left: 10%;
+            width: 38%;
+            transform: rotate(80deg);
+            transform: rotate(24d1eg);
+            z-index: 1;
+            opacity: 0.5;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="mach2-main ">
+
+        <!-- <div class="mach2-overlay"></div> -->
+
+        <div class="container py-5">
+            <!-- Content row with Bootstrap grid -->
+            <div class="row">
+                <!-- Left Column -->
+                <div class="col-md-6 mach2-left-column d-flex align-items-center pl-5  justify-content-center">
+                    <div class="blur-effect-container d-flex align-items-center justify-content-center">
+                        <div class="blur-effect-item">
+                            <span class="blur-word headerFontXl">DMG Mori CLX</span>
+                            <span class="blur-word headerFontXl">350 V6 CNC Lathe</span>
+                            <span class="line-break"></span>
+
+                            <br/><br/>
+                            
+                            <span class="blur-word paragraphFontLg">A versatile CNC lathe designed for high precision and</span>
+                            <span class="line-break"></span>
+                            <span class="blur-word paragraphFontLg">efficiency in turning operations.</span>
+                            <span class="line-break"></span>
+                            <br/><br/>
+
+                            <button type="submit" style="width: 20%;background-color: #0043F1;" class="btn btn-primary rounded-0">Know More</button>
+
+                             
+                        </div>
+                    </div>
+                    
+                    <br /><br />
+                    <!-- <span class="line-break"></span> -->
+
+                </div>
+
+                <!-- Right Column with image -->
+                <div class="col-md-6 mach2-right-column">
+                    <img id="mach2-zoomImage" src="../assets/images/about5.png" alt="Company Image">
+                    <!-- Ensure correct image path -->
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- Full-screen overlay -->
+
+    <!-- jQuery and Bootstrap Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/blureffect.js"></script>
+
+    <script>
+        // Check if the image is in view
+        function isInView(element) {
+            const rect = element.getBoundingClientRect();
+            return rect.top >= 0 && rect.bottom <= window.innerHeight;
+        }
+
+        $(document).ready(function () {
+            const image = $('#mach2-zoomImage');
+
+            // When the page is scrolled, check if the image is in view
+            $(window).on('scroll', function () {
+                if (isInView(image[0])) {
+                    // Add the zoom-in class and change the body class
+                    image.addClass('mach2-zoom-in'); // Trigger zoom-in effect
+                    $('body').addClass('mach2-body'); // Add a unique class to the body
+                }
+            });
+
+            // Trigger initial check if the image is already in view on page load
+            if (isInView(image[0])) {
+                image.addClass('mach2-zoom-in');
+                $('body').addClass('mach2-body');
+            }
+        });
+    </script>
+</body>
+
+</html>

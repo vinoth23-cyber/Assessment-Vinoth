@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About 5</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        /* General styling for the main container */
+        .about5-main {
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Overlay with semi-transparency */
+        .about5-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.5);
+            /* Adjusted transparency */
+            z-index: 1;
+        }
+
+        /* Main content styling */
+        .about5-content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Left column styling */
+        .about5-left-column {
+            flex: 1;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .about5-left-column h2 {
+            font-size: 2rem;
+            color: #333;
+        }
+
+        .about5-left-column p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        /* Right column styling */
+        .about5-right-column {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        /* Image styling for responsiveness */
+        .about5-right-column img {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            object-fit: cover;
+            transform: scale(0.8);
+            transition: transform 0.5s ease-in;
+        }
+
+        /* Zoom-in effect */
+        .about5-right-column img.about5-zoom-in {
+            transform: scale(1);
+        }
+
+        /* Rotated background images */
+        .about5TopRotated-image {
+                position: absolute;
+                top: -37%;
+                width: 40%;
+                left: -16%;
+                transform: rotate(67deg);
+                z-index: 1;
+                opacity: 0.6;
+            }
+
+            .about5BotRotated-image {
+                position: absolute;
+                bottom: -37%;
+                left: 10%;
+                width: 38%;
+                transform: rotate(88deg);
+                z-index: 1;
+                opacity: 0.7;
+            }        /* Large text styles */
+        .headerFontabout5 {
+            font-size: 56px;
+            font-weight: 600;
+        }
+
+        /* List styling */
+        .about5text {
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .about5-main {
+                padding: 10px;
+            }
+
+            .about5-content {
+                flex-direction: column;
+                padding: 15px;
+            }
+
+            .about5-left-column,
+            .about5-right-column {
+                flex: 1;
+                padding: 10px;
+            }
+
+            .about5-left-column h2 {
+                font-size: 1.5rem;
+            }
+
+            .about5-left-column p {
+                font-size: 0.9rem;
+            }
+
+            .about5-right-column img {
+                max-width: 100%;
+                height: auto;
+            }
+
+            /* Adjust rotated images */
+            .about5TopRotated-image {
+                position: absolute;
+                top: -37%;
+                width: 40%;
+                left: -16%;
+                transform: rotate(67deg);
+                z-index: 1;
+                opacity: 0.6;
+            }
+
+            .about5BotRotated-image {
+                position: absolute;
+                bottom: -37%;
+                left: 10%;
+                width: 38%;
+                transform: rotate(88deg);
+                z-index: 1;
+                opacity: 0.7;
+            }
+           
+        }
+
+        @media (max-width: 576px) {
+            .about5-left-column h2 {
+                font-size: 1.2rem;
+            }
+
+            .about5-left-column p {
+                font-size: 0.8rem;
+            }
+
+            .about5-right-column img {
+                max-width: 100%;
+                height: auto;
+            }
+
+            .about5TopRotated-image {
+                position: absolute;
+                top: -37%;
+                width: 40%;
+                left: -16%;
+                transform: rotate(67deg);
+                z-index: 1;
+                opacity: 0.6;
+            }
+
+            .about5BotRotated-image {
+                position: absolute;
+                bottom: -37%;
+                left: 10%;
+                width: 38%;
+                transform: rotate(88deg);
+                z-index: 1;
+                opacity: 0.7;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="about5-main py-5">
+        <img src="/assets/images/about2.png" alt="Background Image" class="about5TopRotated-image">
+        <img src="/assets/images/about2.png" alt="Background Image" class="about5BotRotated-image">
+
+        <div class="about5-content">
+            <div class="row">
+                <!-- Left Column -->
+                <div class="col-md-6 about5-left-column justify-content-center">
+                    <div class="blur-effect-container">
+                        <div class="blur-effect-item">
+                            <span class="blur-word headerFontLg" style="padding-top: 5rem;padding-bottom: 0.5rem;">Why
+                                <span class="primary-color">Prax Engineering?</span></span>
+                        </div>
+                    </div>
+                    <br /><br />
+                    <div>
+                        <div class="blur-effect-container">
+                            <div class="blur-effect-item">
+                                <ul>
+                                    <li class="blur-word paragraphFontMd">Certified and highly experienced team.</li>
+                                    <br />
+                                    <li class="blur-word paragraphFontMd">State-of-the-art manufacturing facilities.
+                                    </li>
+                                    <br />
+                                    <li class="blur-word paragraphFontMd">Expertise in handling diverse materials and
+                                        complex designs.</li>
+                                    <br />
+                                    <li class="blur-word paragraphFontMd">Proven track record across aerospace,
+                                        automotive, and other industries.</li>
+                                    <br />
+                                    <li class="blur-word paragraphFontMd">Commitment to innovation, quality, and
+                                        customer satisfaction.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column with image -->
+                <div class="col-md-6 about5-right-column">
+                    <img id="about5-zoomImage" src="../assets/images/about5.png" alt="Company Image">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery and Bootstrap Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/blureffect.js"></script>
+
+    <script>
+        // Check if the image is in view
+        function isInView(element) {
+            const rect = element.getBoundingClientRect();
+            return rect.top >= 0 && rect.bottom <= window.innerHeight;
+        }
+
+        $(document).ready(function () {
+            const image = $('#about5-zoomImage');
+
+            // When the page is scrolled, check if the image is in view
+            $(window).on('scroll', function () {
+                if (isInView(image[0])) {
+                    // Add the zoom-in class and change the body class
+                    image.addClass('about5-zoom-in'); // Trigger zoom-in effect
+                    $('body').addClass('about5-body'); // Add a unique class to the body
+                }
+            });
+
+            // Trigger initial check if the image is already in view on page load
+            if (isInView(image[0])) {
+                image.addClass('about5-zoom-in');
+                $('body').addClass('about5-body');
+            }
+        });
+    </script>
+</body>
+
+</html>
